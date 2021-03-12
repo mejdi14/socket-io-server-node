@@ -10,6 +10,7 @@ io.on('connection', socket => {
     //Get the chatID of the user and join in a room of the same chatID
     chatID = socket.handshake.query.chatID
     socket.join(chatID)
+    console.log(`this is me ${chatID}`)
 
     //Leave the room if the user closes the socket
     socket.on('disconnect', () => {
@@ -31,4 +32,4 @@ io.on('connection', socket => {
     })
 });
 
-http.listen(process.env.PORT)
+http.listen(8080)
